@@ -1,0 +1,24 @@
+﻿<h3>Student List</h3>
+<p>
+    @Html.ActionLink("Add New", "Create", "Student1")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Percentage %</th>
+        <th>Action</th>
+    </tr>
+    @foreach (CrudInMVC.Models.Student1 stud in ViewBag.Student1List)
+    {
+        <tr>
+            <td>@stud.Id</td>
+            <td>@stud.Name</td>
+            <td>@stud.Percentage</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { @id = stud.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { @id = stud.Id })
+            </td>
+        </tr>
+    }
+</table>

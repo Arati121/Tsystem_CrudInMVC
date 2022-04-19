@@ -1,9 +1,9 @@
-﻿<<h3>Edit Product</h3>
+﻿<<h3>Edit Student</h3>
 <div class="container">
     @{ Html.BeginForm();}
     <div class="row">
         <div class="col-lg-3">
-            @Html.Label("Enter product Name")
+            @Html.Label("Enter Student Name")
         </div>
         <div class="col-lg-3">
             @Html.TextBox("name", (string)ViewBag.name)
@@ -11,10 +11,10 @@
     </div>
     <div class="row">
         <div class="col-lg-3">
-            @Html.Label("Enter product price")
+            @Html.Label("Enter Student percentage")
         </div>
         <div class="col-lg-3">
-            @Html.TextBox("price", (decimal)ViewBag.price)
+            @Html.TextBox("percentage", (decimal)ViewBag.percentage)
             @Html.Hidden("id", (int)ViewBag.id)
         </div>
     </div>

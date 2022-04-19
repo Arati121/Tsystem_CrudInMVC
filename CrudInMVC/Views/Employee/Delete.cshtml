@@ -1,28 +1,28 @@
-﻿<<h3>Edit Product</h3>
+﻿<h3>Are you sure to Delete Employee ?</h3>
 <div class="container">
     @{ Html.BeginForm();}
     <div class="row">
         <div class="col-lg-3">
-            @Html.Label("Enter product Name")
+            @Html.Label("Employee Name")
         </div>
         <div class="col-lg-3">
-            @Html.TextBox("name", (string)ViewBag.name)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-3">
-            @Html.Label("Enter product price")
-        </div>
-        <div class="col-lg-3">
-            @Html.TextBox("price", (decimal)ViewBag.price)
-            @Html.Hidden("id", (int)ViewBag.id)
+            <b>@ViewBag.name</b>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-3">
+            @Html.Label("Employee Salary")
         </div>
         <div class="col-lg-3">
-            <input type="submit" value="Update" class="btn btn-warning" />
+            <b>@ViewBag.salary</b>
+            @Html.Hidden("EId",(int)ViewBag.id)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-3">
+            <input type="submit" value="Delete" class="btn btn-danger" />
         </div>
     </div>
     @{Html.EndForm();}
