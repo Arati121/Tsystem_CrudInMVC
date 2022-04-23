@@ -80,9 +80,9 @@ namespace CrudInMVC.Models
 
         public int Upate(Employee e)
         {
-            cmd = new SqlCommand("update Employee set name=@name,salary=@salary where EId=@EId", con);
-            cmd.Parameters.AddWithValue("@name", e.EName);
-            cmd.Parameters.AddWithValue("@salary", e.ESalary);
+            cmd = new SqlCommand("update Employee set EName=@EName,ESalary=@ESalary where EId=@EId", con);
+            cmd.Parameters.AddWithValue("@EName", e.EName);
+            cmd.Parameters.AddWithValue("@ESalary", e.ESalary);
             cmd.Parameters.AddWithValue("@EId", e.EId);
             con.Open();
             int res = cmd.ExecuteNonQuery();

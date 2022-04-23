@@ -29,9 +29,9 @@ namespace CrudInMVC.Models
         }
         public int Save(Student1 s)
         {
-            cmd = new SqlCommand("insert into Student1 values(@name,@percentage)", con);
-            cmd.Parameters.AddWithValue("@name", s.Name);
-            cmd.Parameters.AddWithValue("@percentage", s.Percentage);
+            cmd = new SqlCommand("insert into Student1 values(@Name,@Percentage)", con);
+            cmd.Parameters.AddWithValue("@Name", s.Name);
+            cmd.Parameters.AddWithValue("@Percentage", s.Percentage);
             con.Open();
             int res = cmd.ExecuteNonQuery();
             con.Close();
@@ -60,8 +60,8 @@ namespace CrudInMVC.Models
         public Student1 GetStudent1Byid(int Id)
         {
             Student1 stud = new Student1();
-            cmd = new SqlCommand("select * from Student1 where id=@id", con);
-            cmd.Parameters.AddWithValue("@id", Id);
+            cmd = new SqlCommand("select * from Student1 where Id=@Id", con);
+            cmd.Parameters.AddWithValue("@Id", Id);
             con.Open();
             dr = cmd.ExecuteReader();
             if (dr.HasRows)
@@ -80,10 +80,10 @@ namespace CrudInMVC.Models
 
         public int Upate(Student1 s)
         {
-            cmd = new SqlCommand("update Student set name=@name,percentage=@percentage where id=@id", con);
-            cmd.Parameters.AddWithValue("@name", s.Name);
-            cmd.Parameters.AddWithValue("@percentage", s.Percentage);
-            cmd.Parameters.AddWithValue("@id", s.Id);
+            cmd = new SqlCommand("update Student1 set Name=@Name,Percentage=@Percentage where Id=@Id", con);
+            cmd.Parameters.AddWithValue("@Name", s.Name);
+            cmd.Parameters.AddWithValue("@Percentage", s.Percentage);
+            cmd.Parameters.AddWithValue("@Id", s.Id);
             con.Open();
             int res = cmd.ExecuteNonQuery();
             con.Close();

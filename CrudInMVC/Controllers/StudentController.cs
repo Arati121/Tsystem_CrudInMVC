@@ -25,8 +25,8 @@ namespace CrudInMVC.Controllers
         public ActionResult Create(IFormCollection fc)
         {
             Student1 s = new Student1();
-            s.Name = fc["name"];
-            s.Percentage = Convert.ToDecimal(fc["percentage"]);
+            s.Name = fc["Name"];
+            s.Percentage = Convert.ToDecimal(fc["Percentage"]);
             int res = context.Save(s);
             if (res == 1)
                 return RedirectToAction("List");
@@ -35,9 +35,9 @@ namespace CrudInMVC.Controllers
 
         }
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int Id)
         {
-            Student1 stud = context.GetStudent1Byid(id);
+            Student1 stud = context.GetStudent1Byid(Id);
             ViewBag.name = stud.Name;
             ViewBag.percentage = stud.Percentage;
             ViewBag.id = stud.Id;
@@ -47,7 +47,7 @@ namespace CrudInMVC.Controllers
         public IActionResult Edit(IFormCollection form)
         {
             Student1 s = new Student1();
-            s.Name = form["name"];
+            s.Name = form["Name"];
             s.Percentage = Convert.ToDecimal(form["Percentage"]);
             s.Id = Convert.ToInt32(form["Id"]);
             int res = context.Upate(s);

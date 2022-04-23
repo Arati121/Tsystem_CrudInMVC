@@ -39,9 +39,9 @@ namespace CrudInMVC.Controllers
         {
             Employee emp = context.GetEmployeeByid(id);
 
-            ViewBag.Name = emp.EName;
-            ViewBag.Salary = emp.ESalary;
-            ViewBag.Id = emp.EId;
+            ViewBag.EName = emp.EName;
+            ViewBag.ESalary = emp.ESalary;
+            ViewBag.EId = emp.EId;
             return View();
         }
         [HttpPost]
@@ -49,8 +49,8 @@ namespace CrudInMVC.Controllers
         {
             Employee emp = new Employee();
            
-            emp.EName = form["name"];
-            emp.ESalary = Convert.ToInt32(form["salary"]);
+            emp.EName = form["EName"];
+            emp.ESalary = Convert.ToInt32(form["ESalary"]);
             emp.EId = Convert.ToInt32(form["EId"]);
             int res = context.Upate(emp);
             if (res == 1)
